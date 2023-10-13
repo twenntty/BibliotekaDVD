@@ -54,6 +54,23 @@ public class Library {
         }
     }
 
+    public void displayBorrowedItems() {
+        System.out.println("Borrowed Items:");
+        for (Client client : clients) {
+            List<Item> borrowedItems = client.getBorrowedItems();
+            if (!borrowedItems.isEmpty()) {
+                System.out.println("Client: " + client.getName());
+                for (Item item : borrowedItems) {
+                    if (item instanceof Book) {
+                        System.out.println("Book: " + item.getTitle());
+                    } else if (item instanceof DVD) {
+                        System.out.println("DVD: " + item.getTitle());
+                    }
+                }
+            }
+        }
+    }
+
     public List<Item> getItems(){
         return items;
     }

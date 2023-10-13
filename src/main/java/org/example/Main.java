@@ -31,6 +31,12 @@ public class Main {
 
         library.displayAvailableItems();
 
+        System.out.println("\t");
+
+        library.displayBorrowedItems();
+
+        System.out.println("\t");
+
         List<Item> libraryItems = library.getItems();
         for (Item item : libraryItems) {
             if (item instanceof Book) {
@@ -39,6 +45,8 @@ public class Main {
                 System.out.println(("DVD: " + item.getTitle() + " Director: " +((DVD) item).getDirector()));
             }
         }
+
+        System.out.println("\t");
 
         List<Client> registeredClients = library.getClients();
         for (Client client : registeredClients) {
