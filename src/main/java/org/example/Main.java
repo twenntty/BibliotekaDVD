@@ -18,6 +18,12 @@ public class Main {
 
         library.removeItem(book1); // example remove book
 
+        Client reader1 = new Client(1, "John Doe", "123 Main St, City", "0500000000");
+        library.registerClient(reader1);
+
+        Client reader2 = new Client(2, "Alice Smith", "456 Elm St, Town", "18765454");
+        library.registerClient(reader2);
+
         List<Item> libraryItems = library.getItems();
         for (Item item : libraryItems) {
             if (item instanceof Book) {
@@ -25,6 +31,11 @@ public class Main {
             } else if (item instanceof DVD) {
                 System.out.println(("DVD: " + item.getTitle() + " Director: " +((DVD) item).getDirector()));
             }
+        }
+
+        List<Client> registeredClients = library.getClients();
+        for (Client client : registeredClients) {
+            System.out.println("Client: " + client.getName());
         }
 
     }
