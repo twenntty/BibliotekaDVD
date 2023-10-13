@@ -16,6 +16,8 @@ public class Main {
         library.addItem(dvd1);
         library.addItem(dvd2);
 
+        library.removeItem(book1); // example remove book
+
         List<Item> libraryItems = library.getItems();
         for (Item item : libraryItems) {
             if (item instanceof Book) {
