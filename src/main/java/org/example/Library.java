@@ -12,6 +12,15 @@ public class Library {
         clients = new ArrayList<>();
     }
 
+    private boolean isItemBorrowed(Item item) {
+        for (Client client : clients) {
+            if(client.getBorrowedItems().contains(item)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addItem(Item item) {
         items.add(item);
     }
@@ -29,6 +38,19 @@ public class Library {
             client.getBorrowedItems().add(item);
             Date dueDate = new Date();
             client.setDueDate(dueDate);
+        }
+    }
+
+    public void displayAvailableItems() {
+        System.out.println("Available Items: ");
+        for (Item item : items) {
+            if (!isItemBorrowed(item)){
+                if(item instanceof Book) {
+                    System.out.println("Book: " + item.getTitle());
+                } else if (item instanceof  DVD) {
+                    System.out.println(("DVD: " + item.getTitle()));
+                }
+            }
         }
     }
 

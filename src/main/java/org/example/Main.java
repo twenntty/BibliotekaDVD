@@ -29,6 +29,8 @@ public class Main {
 
         library.checkOutItem(itemToCheckOut, clientToCheckOut);
 
+        library.displayAvailableItems();
+
         List<Item> libraryItems = library.getItems();
         for (Item item : libraryItems) {
             if (item instanceof Book) {
