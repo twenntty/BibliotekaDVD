@@ -19,9 +19,9 @@ public class Main {
         List<Item> libraryItems = library.getItems();
         for (Item item : libraryItems) {
             if (item instanceof Book) {
-                System.out.println("Book: " + item.getTitle());
+                System.out.println("Book: " + item.getTitle() + " Author: " + ((Book) item).getAuthor() + " Year: " + ((Book) item).getYear());
             } else if (item instanceof DVD) {
-                System.out.println(("DVD: " + item.getTitle()));
+                System.out.println(("DVD: " + item.getTitle() + " Director: " +((DVD) item).getDirector()));
             }
         }
 
