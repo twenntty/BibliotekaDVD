@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 public class Library {
     private  List<Item> items;
@@ -21,6 +22,14 @@ public class Library {
 
     public void registerClient(Client client) {
         clients.add(client);
+    }
+
+    public void checkOutItem(Item item, Client client) {
+        if(!client.getBorrowedItems().contains((item))) {
+            client.getBorrowedItems().add(item);
+            Date dueDate = new Date();
+            client.setDueDate(dueDate);
+        }
     }
 
     public List<Item> getItems(){

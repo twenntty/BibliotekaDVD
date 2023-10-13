@@ -24,6 +24,11 @@ public class Main {
         Client reader2 = new Client(2, "Alice Smith", "456 Elm St, Town", "18765454");
         library.registerClient(reader2);
 
+        Client clientToCheckOut = library.getClients().get(0);
+        Item itemToCheckOut = library.getItems().get(0);
+
+        library.checkOutItem(itemToCheckOut, clientToCheckOut);
+
         List<Item> libraryItems = library.getItems();
         for (Item item : libraryItems) {
             if (item instanceof Book) {
